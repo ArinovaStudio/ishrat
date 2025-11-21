@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+
+
+@layer base {
+  :root {
+    --font-pop: "Poppins", sans-serif;
+    --font-bayon: "Bayon", cursive;
+    --font-teachers: "Teachers", cursive;
+    --font-tenor: "Tenor Sans", sans-serif;
+  }
+}
+
+@layer utilities {
+  .font-poppins {
+    font-family: var(--font-pop);
+  }
+  .font-bayon {
+    font-family: var(--font-bayon);
+  }
+  .font-teacher {
+    font-family: var(--font-teachers);
+  }
+  .font-tenor {
+    font-family: var(--font-tenor);
+  }
+}
+
+.radial {
+background: radial-gradient(closest-side, #00000080, #00000040, #00000000);
+}
+
+.radialRed {
+background: radial-gradient(closest-side, #ff000050, #ff000080, #ff000000);
+}
