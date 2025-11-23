@@ -1,5 +1,8 @@
 import React from 'react'
 import { LucideArrowRight } from "lucide-react"
+import img from "../../assets/abt.png";
+import abt from "../../assets/abt_2.png";
+
 
 function Author() {
   return (
@@ -50,21 +53,27 @@ function Author() {
         <div className="
           w-5/6 h-full relative bg-white
           max-lg:w-full max-lg:h-[400px]
-          max-md:h-[320px]
+          max-md:h-80
           max-sm:h-[280px]
         ">
           {/* BACKGROUND BOX */}
           <div className="
-            w-96 h-60 bg-red-500 absolute top-2/4 -left-1/2
+            w-96 h-60 absolute top-2/4 -left-1/2
             max-lg:hidden
           ">
+          <img
+            alt="image"
+            src={abt}
+            className="w-full h-full object-cover"
+          />
           </div>
+
 
           {/* IMAGE */}
           <img
             alt="image"
-            src="https://picsum.photos/1080/1080"
-            className="w-full h-full object-cover rounded-lg"
+            src={img}
+            className="w-full h-full object-cover"
           />
 
           {/* NAME */}

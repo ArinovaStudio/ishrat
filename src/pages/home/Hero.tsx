@@ -1,4 +1,7 @@
 import React from 'react'
+import imge from "../../assets/butterfly.png";
+import women from "../../assets/women.png";
+import banner from "../../assets/poster.png";
 
 function Hero() {
   return (
@@ -29,7 +32,7 @@ function Hero() {
           max-lg:w-4/5 max-lg:h-auto max-lg:items-center max-lg:text-center max-lg:px-6
         ">
           <h1 className="
-            font-serif text-4xl bg-linear-to-b from-black to-neutral-400 bg-clip-text text-transparent
+            font-serif text-5xl bg-linear-to-b from-black to-neutral-400 bg-clip-text text-transparent
             max-md:text-3xl
             max-sm:text-2xl
           ">
@@ -37,7 +40,7 @@ function Hero() {
           </h1>
 
           <p className="
-            text-neutral-400 text-sm font-poppins mt-2
+            text-neutral-400 text-base font-poppins mt-2
             max-lg:text-center max-md:text-xs
           ">
             Lorem ipsum dolor sit amet consectetur. Suspendisse amet lacinia neque sed.
@@ -56,15 +59,29 @@ function Hero() {
           <div className="w-full h-4/5 radialRed rounded-full max-sm:h-3/4"></div>
 
           <div className="
-            w-12 h-12 absolute inset-8 top-16 bg-blue-500 z-50
+            w-16 h-16 absolute inset-24 top-20 z-50
             max-md:w-10 max-md:h-10 max-sm:w-8 max-sm:h-8
-          "></div>
+          ">
+            <img 
+            src={imge}
+            alt='burrerlfy'
+            className='w-full h-full object-cover'
+            />
+
+          </div>
 
           <div className="
-            w-3/5 h-3/5 absolute inset-1/6 bg-red-500
+            w-3/5 h-3/5 absolute inset-1/6 top-1/5
             max-md:w-2/3 max-md:h-2/3
             max-sm:w-3/4 max-sm:h-3/4
-          "></div>
+          ">
+            <img 
+            src={women}
+            alt='poster'
+            className='w-full h-full object-contain'
+            />
+
+          </div>
         </div>
 
 
@@ -74,10 +91,17 @@ function Hero() {
           max-lg:w-4/5 max-lg:h-[250px]
         ">
           <div className="
-            w-1/3 h-1/3 bg-red-500
+            w-1/3 h-1/3
             max-md:w-1/2 max-md:h-1/2
             max-sm:w-2/3 max-sm:h-2/3
-          "></div>
+          ">
+            <img 
+            src={banner}
+            alt='burrerlfy'
+            className='w-full h-full object-contain'
+            />
+
+          </div>
         </div>
 
       </div>
