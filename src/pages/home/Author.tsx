@@ -2,6 +2,7 @@ import React from 'react'
 import { LucideArrowRight } from "lucide-react"
 import img from "../../assets/abt.png";
 import abt from "../../assets/abt_2.png";
+import { Link } from 'react-router-dom';
 
 
 function Author() {
@@ -35,13 +36,13 @@ function Author() {
           <i>Flying with Words</i> echoing untold truths.
         </p>
 
-        <div className="
+        <Link to={"/about"} className="
           flex justify-start items-center gap-2 font-teacher text-4xl relative w-fit
           after:absolute after:w-full after:border-b-3 after:border-black after:inset-0 after:-ml-14 after:mt-2
           max-lg:mx-auto max-lg:text-3xl max-md:text-2xl max-sm:text-xl
         ">
           Know More <LucideArrowRight size={20} strokeWidth={1.5} />
-        </div>
+        </Link>
       </div>
 
       {/* RIGHT SIDE */}

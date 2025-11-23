@@ -2,6 +2,7 @@ import React from 'react';
 import { LucideArrowRight } from "lucide-react"
 import { books } from '../../mock/books';
 import { BooksCard } from '../../elements/BooksCard';
+import { Link } from 'react-router-dom';
 
 
 
@@ -15,10 +16,10 @@ const Books: React.FC = () => {
             ">
                 <h1 className="font-tenor text-6xl max-md:text-4xl max-sm:text-3xl">My Books</h1>
 
-                <div className="border-2 border-black rounded-full hover:bg-black hover:text-white transition-all cursor-pointer px-10 h-fit py-1 flex items-center justify-center gap-4 max-sm:px-6">
+                <Link to={"/books"} className="border-2 border-black rounded-full hover:bg-black hover:text-white transition-all cursor-pointer px-10 h-fit py-1 flex items-center justify-center gap-4 max-sm:px-6">
                     <p className="font-tenor max-sm:text-sm">View All</p>
                     <LucideArrowRight size={16} />
-                </div>
+                </Link>
             </div>
 
 

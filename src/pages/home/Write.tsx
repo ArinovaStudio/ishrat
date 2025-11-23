@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heart, type LucideIcon } from "lucide-react";
+import { Ghost, Heart, VenetianMask, type LucideIcon } from "lucide-react";
 
 const WriteCards = ({ Icon, title }: { Icon: LucideIcon, title: string }) => {
     return (
@@ -43,8 +43,8 @@ const Write: React.FC = () => {
                 max-sm:flex-col max-sm:w-full max-sm:gap-6
             ">
                 <WriteCards Icon={Heart} title={"Romantic"} />
-                <WriteCards Icon={Heart} title={"Thriller"} />
-                <WriteCards Icon={Heart} title={"Horror"} />
+                <WriteCards Icon={VenetianMask} title={"Thriller"} />
+                <WriteCards Icon={Ghost} title={"Horror"} />
             </div>
 
             {/* Bottom heading */}

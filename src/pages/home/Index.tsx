@@ -6,6 +6,7 @@ import Write from "./Write"
 import Books from "./Books"
 import Podcasts from "./Podcast"
 import Videos from "./Video"
+import Shop from './Shop'
 
 function Home() {
   return (
@@ -16,6 +17,7 @@ function Home() {
     <Books  />
     <Podcasts />
     <Videos />
+    <Shop />
   </>
   )
 }

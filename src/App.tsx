@@ -8,6 +8,7 @@ import PodcastsAll from "./pages/podcasts/PodcastsAll"
 import About from "./pages/about"
 import Footer from "./elements/Footer"
 import Navbar from "./elements/Navbar"
+import MerchantsPage from "./pages/shop/ShopAll"
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Route path="/videos" element={<VideosAll />} />
       <Route path="/podcasts" element={<PodcastsAll />} />
       <Route path="/about" element={<About />} />
+      <Route path="/shop" element={<MerchantsPage />} />
     </Routes>
       <Footer />
       </>

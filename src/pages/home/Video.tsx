@@ -2,6 +2,7 @@ import React from 'react';
 import { LucideArrowRight } from "lucide-react"
 import { video } from '../../mock/video';
 import { VideoCard } from '../../elements/VideoCard';
+import { Link } from 'react-router-dom';
 
 
 const Videos: React.FC = () => {
@@ -34,7 +35,7 @@ const Videos: React.FC = () => {
             </div>
 
             <div className="w-full grid place-items-center pt-10">
-                <div className="
+                <Link to={"/videos"} className="
                     w-fit border-2 border-black rounded-full cursor-pointer px-10 py-1
                     flex items-center justify-center gap-4 transition-all
                     hover:bg-black hover:text-white
@@ -42,7 +43,7 @@ const Videos: React.FC = () => {
                 ">
                     <p className="font-tenor max-sm:text-sm">View All</p>
                     <LucideArrowRight size={16} />
-                </div>
+                </Link>
             </div>
         </div>
     );

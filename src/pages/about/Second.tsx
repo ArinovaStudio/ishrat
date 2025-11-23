@@ -64,7 +64,7 @@ function Second() {
       <div className="
         w-1/2 h-full relative px-14 py-10
         max-lg:w-full max-lg:h-[400px] max-lg:px-10
-        max-md:h-[320px] max-md:px-6
+        max-md:h-80 max-md:px-6
         max-sm:h-[250px]
       ">
         <img 
