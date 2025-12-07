@@ -20,7 +20,7 @@ export const BooksCard = ({ image, title, description, link, full = false }: { i
                     src={image}
                     className="w-full h-full object-cover"
                 />
-                <div className='absolute w-full h-full inset-0 bg-black/30 items-end justify-end flex-col p-4 hidden group-hover:flex transition-opacity opacity-0 group-hover:opacity-100 duration-500'>
+                <div className='absolute w-full h-full inset-0 bg-black/30 group-hover:backdrop-blur-sm transition-all items-end justify-end flex-col p-4 hidden group-hover:flex duration-300 opacity-0 group-hover:opacity-100'>
                     <h1 className="text-3xl font-tenor text-white max-sm:text-xl">{title}</h1>
                     <p className='text-sm text-right font-poppins text-white/70 mt-2 max-sm:text-xs'>{description}</p>
                                         <div className="w-full grid place-items-end py-2">
