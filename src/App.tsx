@@ -9,6 +9,9 @@ import About from "./pages/about"
 import Footer from "./elements/Footer"
 import Navbar from "./elements/Navbar"
 import MerchantsPage from "./pages/shop/ShopAll"
+import BlogPage from "./pages/blog/BlogPage"
+import PressPage from "./pages/press/PressPage"
+import BlogSlug from "./pages/blog/BlogSlug"
 
 function App() {
   return (
@@ -21,6 +24,10 @@ function App() {
       <Route path="/podcasts" element={<PodcastsAll />} />
       <Route path="/about" element={<About />} />
       <Route path="/shop" element={<MerchantsPage />} />
+      <Route path="/blogs" element={<BlogPage />} />
+      <Route path="/blogs/:slug" element={<BlogSlug />} />
+      <Route path="/press-release" element={<PressPage />} />
+      <Route path="/press-release/:slug" element={<BlogSlug />} />
     </Routes>
       <Footer />
       </>

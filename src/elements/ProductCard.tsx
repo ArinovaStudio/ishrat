@@ -1,5 +1,6 @@
 import React from 'react';
 import { ShoppingCart } from 'lucide-react';
+import urlFor from '../lib/ImageBuilder';
 
 interface ProductCardProps {
   image: string;
@@ -28,14 +29,16 @@ const ProductCard: React.FC<ProductCardProps> = ({
     <div className="bg-white overflow-hidden w-full h-[600px] max-w-sm">
       {/* Product Image */}
       <div className="relative">
+        <div className="w-full h-full">
         <img 
-          src={image} 
+          src={urlFor(image).url()} 
           alt={title}
-          className="w-full h-64 object-cover"
-        />
-        {discountPercent > 0 && (
+          className="w-full h-full object-cover"
+          />
+          </div>
+        {discountedPrice && (
           <div className="absolute top-4 right-4 bg-red-600 text-white px-3 py-1 text-sm font-bold">
-            -{discountPercent}%
+            {discountPercent}% OFF
           </div>
         )}
       </div>
@@ -54,21 +57,21 @@ const ProductCard: React.FC<ProductCardProps> = ({
         <div className="mb-6">
           <div className="flex items-center gap-3">
             <span className="text-3xl font-bold text-gray-900">
-              ${discountedPrice.toFixed(2)}
+              ₹{originalPrice.toFixed(2)}
             </span>
             <span className="text-lg text-gray-500 line-through">
-              ${originalPrice.toFixed(2)}
+              ₹{discountedPrice.toFixed(2)}
             </span>
           </div>
           <p className="text-green-600 text-sm font-semibold mt-1">
-            Save ${(originalPrice - discountedPrice).toFixed(2)}
+            Save ₹{(discountedPrice - originalPrice).toFixed(2)}
           </p>
         </div>
         
         {/* Buy Now Button */}
         <button
           onClick={handleBuyNow}
-          className="w-full bg-black hover:bg-black text-white font-bold py-4 px-6 transition-colors duration-200 flex items-center justify-center gap-2 text-lg"
+          className="w-full cursor-pointer hover:scale-90 hover:bg-gray-900 transition-all bg-black text-white font-bold py-4 px-6 duration-200 flex items-center justify-center gap-2 text-lg"
         >
           <ShoppingCart size={24} />
           Buy Now

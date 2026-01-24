@@ -7,6 +7,8 @@ import Books from "./Books"
 import Podcasts from "./Podcast"
 import Videos from "./Video"
 import Shop from './Shop'
+import Blogs from './Blogs'
+import PressPage from './PressPage'
 
 function Home() {
   return (
@@ -17,6 +19,8 @@ function Home() {
     <Books  />
     <Podcasts />
     <Videos />
+    <Blogs />
+    <PressPage />
     <Shop />
   </>
   )

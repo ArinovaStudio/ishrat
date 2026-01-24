@@ -20,12 +20,15 @@ function Navbar() {
       <ul className='flex justify-center items-center gap-8
         max-lg:hidden
       '>
-        <Link to="/" className='font-tenor text-2xl font-light'>Home</Link>
-        <Link to="/about" className='font-tenor text-2xl font-light'>About</Link>
-        <Link to="/books" className='font-tenor text-2xl font-light'>Books</Link>
-        <Link to="/podcasts" className='font-tenor text-2xl font-light'>Podcasts</Link>
-        <Link to="/videos" className='font-tenor text-2xl font-light'>Videos</Link>
-        <Link to="/shop" className='font-tenor text-2xl font-light'>Shop</Link>
+        <Link to="/" className='font-tenor text-xl font-normal'>Home</Link>
+        <Link to="/about" className='font-tenor text-xl font-normal'>About</Link>
+        <Link to="/books" className='font-tenor text-xl font-normal'>Books</Link>
+        <Link to="/podcasts" className='font-tenor text-xl font-normal'>Podcasts</Link>
+        <Link to="/videos" className='font-tenor text-xl font-normal'>Videos</Link>
+        <Link to="/shop" className='font-tenor text-xl font-normal'>Shop</Link>
+        <Link to="/blogs" className='font-tenor text-xl font-normal'>Blogs</Link>
+        <Link to="/press-release" className='font-tenor text-xl font-normal'>Press Release</Link>
+
       </ul>
 
       {/* Hamburger Icon (Mobile + Tablet) */}

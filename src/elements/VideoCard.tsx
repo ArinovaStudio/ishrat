@@ -1,12 +1,13 @@
 import { LucidePlay } from "lucide-react";
 import React from "react";
 import { Link } from "react-router-dom";
+import urlFor from "../lib/ImageBuilder";
 
 export const VideoCard = ({ image, title, link }: { image: string, title: string, link: string }) => {
     return (
         <div
             className="
-                w-1/4 h-5/6 flex justify-between items-center flex-col
+                w-1/3 h-[45vh] flex justify-between items-center flex-col
                 max-lg:w-1/3
                 max-md:w-1/2 max-md:h-auto
                 max-sm:w-full max-sm:h-auto max-sm:mb-10
@@ -19,7 +20,7 @@ export const VideoCard = ({ image, title, link }: { image: string, title: string
             ">
                 <img
                     alt="books thumbnail"
-                    src={image}
+                    src={urlFor(image).url()}
                     className="w-full h-full object-cover"
                 />
                 <div className='absolute w-full h-full inset-0 bg-black/20 flex items-start justify-end flex-col p-4'>

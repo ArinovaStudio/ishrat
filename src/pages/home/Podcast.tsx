@@ -2,6 +2,8 @@ import { Music2, Timer, Youtube } from 'lucide-react';
 import React from 'react';
 import { podcasts } from '../../mock/podcast';
 import { Link } from 'react-router-dom';
+import { useSanityQuery } from '../../lib/useSanityQuery';
+import urlFor from '../../lib/ImageBuilder';
 
 
 
@@ -76,16 +78,30 @@ const PodcastCard = ({ title, desc, duration, cat, spotify, yt, image }: {
             {/* IMAGE ALWAYS BEHIND TEXT */}
             <img
                 alt="image"
-                src={image}
+                src={urlFor(image).url()}
                 className="w-full h-full object-cover"
             />
         </div>
     );
 }
 
-
+type podcastType = {
+  title: string;
+  description: string;
+  category: string;
+  duration: number;
+  image: string;
+  spotifyLink: string;
+  youtubeLink: string;
+}
 
 const Podcasts: React.FC = () => {
+        const {data, loading, error} = useSanityQuery<podcastType>({type: 'podcast', limit: 7});
+        
+        if (loading) return <div>Loading...</div>;
+        if (error) return <div>Error: {error.message}</div>;
+
+
     return (
         <div className="w-screen h-screen overflow-hidden max-lg:h-auto max-lg:py-20">
             <h1
@@ -104,10 +120,10 @@ const Podcasts: React.FC = () => {
                     max-md:px-6 max-sm:px-4
                 "
             >
-                {podcasts.length > 0 && podcasts.slice(0, 7).map((items, i) => (
+                {data.length > 0 && data.slice(0, 7).map((items, i) => (
                     <PodcastCard
                         key={i}
-                        cat={items.cateogry}
+                        cat={items.category}
                         desc={items.description}
                         duration={items.duration}
                         title={items.title}

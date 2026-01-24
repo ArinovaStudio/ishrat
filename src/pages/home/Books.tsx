@@ -3,10 +3,25 @@ import { LucideArrowRight } from "lucide-react"
 import { books } from '../../mock/books';
 import { BooksCard } from '../../elements/BooksCard';
 import { Link } from 'react-router-dom';
+import { useSanityQuery } from '../../lib/useSanityQuery';
 
+type BooksType = {
+    title: string;
+    image: string;
+    description: string;
+    link: string;
+    price: number;
+    releasedAt: string;
+    tags: string[];
+}
 
 
 const Books: React.FC = () => {
+    const {data, loading, error} = useSanityQuery<BooksType>({type: 'book', limit: 3});
+    
+    if (loading) return <div>Loading...</div>;
+    if (error) return <div>Error: {error.message}</div>;
+    
     return (
         <div className="w-screen h-screen overflow-hidden max-md:h-auto">
             <div className="flex justify-between items-center px-16 py-10 
@@ -31,13 +46,16 @@ const Books: React.FC = () => {
                 max-sm:flex-wrap max-sm:px-4
             ">
                 {
-                    books.length > 0 && books.slice(0, 3).map((items, i) => (
+                    data.length > 0 && data.slice(0, 3).map((items, i) => (
                         <BooksCard
                             key={i}
                             title={items.title}
                             image={items.image}
                             description={items.description}
                             link={items.link}
+                            price={items.price}
+                            date={items.releasedAt.split('T')[0]}
+                            tags={items.tags}
                         />
                     ))
                 }

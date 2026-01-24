@@ -1,8 +1,23 @@
 import React from 'react';
 import HorizontalProductCard from '../../elements/HoriCard';
 import { products } from '../../mock/shop';
+import { useSanityQuery } from '../../lib/useSanityQuery';
+
+type ShopType = {
+  mainImage: string;
+  title: string;
+  description: string;
+  price: number;
+  discountPrice: number;
+  buylink: string;
+}
 
 const MerchantsPage: React.FC = () => {
+      const {data, loading, error} = useSanityQuery<ShopType>({type: 'merch'});
+      
+      if (loading) return <div>Loading...</div>;
+      if (error) return <div>Error: {error.message}</div>;
+  
   return (
     <div className="min-h-screen h-auto bg-gray-50 py-12 sm:px-20 px-4">
       {/* Header Section */}
@@ -17,15 +32,15 @@ const MerchantsPage: React.FC = () => {
 
       {/* Products Grid */}
       <div className="space-y-6">
-        {products.map((product, index) => (
+        {data.length > 0 && data.map((product, index) => (
           <HorizontalProductCard
             key={index}
-            image={product.image}
+            image={product.mainImage}
             title={product.title}
             description={product.description}
-            originalPrice={product.originalPrice}
-            discountedPrice={product.discountedPrice}
-            shopifyLink={product.shopifyLink}
+            originalPrice={product.price}
+            discountedPrice={product.discountPrice}
+            shopifyLink={product.buylink}
           />
         ))}
       </div>

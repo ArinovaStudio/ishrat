@@ -1,5 +1,6 @@
 import React from 'react';
 import { ShoppingCart } from 'lucide-react';
+import urlFor from '../lib/ImageBuilder';
 
 interface HorizontalProductCardProps {
   image: string;
@@ -30,11 +31,11 @@ const HorizontalProductCard: React.FC<HorizontalProductCardProps> = ({
         {/* Product Image Section */}
         <div className="relative md:w-80 h-64 md:h-auto shrink-0 bg-gray-50">
           <img 
-            src={image} 
+            src={urlFor(image).url()} 
             alt={title}
             className="w-full h-full object-cover"
           />
-          {discountPercent > 0 && (
+          {discountedPrice > 0 && (
             <div className="absolute top-4 left-4 bg-red-600 text-white px-3 py-1.5 text-xs font-bold">
               {discountPercent}% OFF
             </div>
@@ -78,7 +79,7 @@ const HorizontalProductCard: React.FC<HorizontalProductCardProps> = ({
               {/* Buy Now Button */}
               <button
                 onClick={handleBuyNow}
-                className="bg-black hover:bg-neutral-600 text-white font-bold py-3 px-8 transition-colors duration-200 flex items-center justify-center gap-2 whitespace-nowrap"
+                className="bg-black cursor-pointer hover:bg-neutral-600 text-white font-bold py-3 px-8 transition-colors duration-200 flex items-center justify-center gap-2 whitespace-nowrap"
               >
                 <ShoppingCart size={20} />
                 Buy Now
